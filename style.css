@@ -1,0 +1,133 @@
+/*variables:*/
+html {
+  --transitionTiming: 0.5s ease;
+}
+
+html {
+  font-family: "Courier Prime", monospace;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: black;
+}
+
+html,
+body {
+  /*reset*/
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  padding: 2.5ch;
+  padding-left: 4ch;
+  padding-right: 4ch;
+  box-sizing: border-box;
+  width: 100vw;
+  gap: 10ch;
+  align-items: center;
+}
+
+header > * {
+  text-transform: uppercase;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 100;
+
+  margin: 0;
+}
+
+header ul.options {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between;
+    flex-grow: 1; */
+  gap: 10ch;
+  list-style: none;
+}
+
+ul.options li {
+  cursor: pointer;
+}
+
+#headerspacer {
+  /*Debug:*/
+  /* background-color: red; */
+}
+
+#inverter {
+  position: fixed;
+  background-color: black;
+  pointer-events: none;
+  transition: background-color var(--transitionTiming);
+
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  display: block;
+}
+
+html.dark #inverter {
+  background-color: white;
+}
+
+#toggleInv {
+  display: flex;
+  gap: 1ch;
+  margin-left: auto;
+}
+
+.invSwitch p {
+  /* position: absolute; */
+  cursor: pointer;
+}
+
+.invOn {
+  opacity: 0%;
+  transition: opacity var(--transitionTiming);
+}
+html.dark .invOn {
+  opacity: 100%;
+}
+
+/*ingen tekst highlighting:*/
+
+#toggleInv,
+header li {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#pages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page {
+    background-color: white;
+  /* border: 1px solid black; */
+  width: 70%;
+  aspect-ratio: 1 / 1.414;
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.185);
+  box-sizing: border-box;
+  padding: 2ch;
+
+}
+
+.page :first-child {
+    margin-top: 0;
+    padding-top: 0;
+}

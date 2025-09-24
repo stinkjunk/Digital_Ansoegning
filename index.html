@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magnus Krahl</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font API'er: -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            document.documentElement.classList.add("dark");
+        }
+    </script>
+  </head>
+  <body>
+    <div id="inverter"></div>
+    <header>
+      <h1>Magnus Krahl Larsen<span class = "writingCursor"></span></h1>
+      <ul class="options">
+        <li id="selectFront" class="pageSelector">Forside</li>
+        <li id="selectAbout" class="pageSelector">Om mig</li>
+        <li id="selectSkills" class="pageSelector">Færdigheder</li>
+        <li id="selectCV" class="pageSelector">CV</li>
+        <li id="selectContact" class="pageSelector">Kontakt</li>
+      </ul>
+      <div id="toggleInv">
+        <p>Mørk:</p>
+        <div class="invSwitch">
+          <!-- <p class="invOn active">X</p>
+          <p>O</p> -->
+          <p>[<span class="invOn">X</span>]</p>
+        </div>
+      </div>
+    </header>
+    <div id="headerspacer"></div>
+    <main>
+        <div id="pages">
+            <div id="pageFront" class="page">
+                <h2>Forside</h2>
+                <p>Her er min forside</p>
+                <!-- <img src="https://imgs.search.brave.com/7JxJzAkX7j9gbrJ51QuViogQjNqDMk8I88uCOzY_b3o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2Y2LzY5/LzFmL2Y2NjkxZjMx/MmM1YzUxYmZhZTE5/YzE2YmUxZDlmNjM5/LmpwZw" alt="" srcset=""> -->
+        </div>
+    </main>
+    <footer></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
