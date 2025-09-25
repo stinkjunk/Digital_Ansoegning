@@ -84,6 +84,10 @@ ul.options li {
   cursor: pointer;
 }
 
+li {
+  list-style-type: "- ";
+}
+
 #headerspacer {
   /*Debug:*/
   /* background-color: red; */
