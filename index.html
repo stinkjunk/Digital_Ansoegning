@@ -13,44 +13,85 @@
       rel="stylesheet"
     />
     <script>
-    //   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    //     document.documentElement.classList.add("dark");
-    //   }
+      //   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      //     document.documentElement.classList.add("dark");
+      //   }
     </script>
   </head>
   <body>
     <div id="inverter"></div>
+    <div class="fixedCont">
     <header>
-      <h1>Magnus Krahl Larsen<span class="writingCursor"></span></h1>
-      <ul class="options">
-        <!-- <li id="selectFront" class="pageSelector">Forside</li> -->
-        <li id="selectAbout" class="pageSelector">Om mig</li>
-        <li id="selectSkills" class="pageSelector">Færdigheder</li>
-        <li id="selectCV" class="pageSelector">CV</li>
-        <li id="selectContact" class="pageSelector">Kontakt</li>
-      </ul>
+      <h1 id="pageTitle">Magnus Krahl Larsen<span class="writingCursor sub800"></span><a href="#pageAbout" class="noStyling sup800" id="scrollDown"></a></h1>
       <div id="toggleInv">
         <p>Mørk:</p>
         <div class="invSwitch">
-          <!-- <p class="invOn active">X</p>
-          <p>O</p> -->
           <p>[<span class="invOn">X</span>]</p>
         </div>
       </div>
     </header>
+    </div>
     <div id="headerspacer"></div>
     <main>
       <div id="pages">
         <div id="pageAbout" class="page">
           <div class="imagespacer">
-            <img src="me.webp" alt="Billede af mig" class="processed"/>
+            <img src="me.webp" alt="Billede af mig" class="processed" />
             <div>
-              <h2>Halløj!</h2>
-              <p>
-                Mit navn er Magnus, og jeg studerer front-end udvikling på
-                Erhversakademi København.<span class="writingCursor"></span>
-              </p>
+              <!-- <h2>Halløj!</h2> -->
+              <div class="flex">
+                <h2>Halløj!</h2>
+                <p>
+                  Mit navn er Magnus, og jeg studerer
+                  <a
+                    href="https://www.ek.dk/efteruddannelse/diplomuddannelsen-i-webudvikling/webudvikling-frontend"
+                    target="_blank"
+                    >front-end udvikling</a
+                  >
+                  på
+                  <a href="https://www.ek.dk/" target="_blank"
+                    >Erhversakademi København (EK).</a
+                  >
+                  <!-- <span class="writingCursor sub800"></span> -->
+                </p>
+                <p class="sup800">
+                  Jeg brænder for at bygge fede brugeroplevelser med moderne
+                  webteknologier - og jeg har en særlig forkærlighed for clean
+                  design, responsivt layout og godt kodehåndværk.
+                  <!-- <span
+                    class="writingCursor"
+                  ></span> -->
+                </p>
+              </div>
             </div>
+          </div>
+          <div class="extraMargin">
+            <p class="sub800">
+              Jeg brænder for at bygge fede brugeroplevelser med moderne
+              webteknologier - og jeg har en særlig forkærlighed for clean
+              design, responsivt layout og godt kodehåndværk.
+            </p>
+            <h2>Færdigheder</h2>
+            <ul>
+              <li>Semantisk HTML og struktureret opmærkning</li>
+              <li>Moderne CSS - inkl. Flexbox, Grid og animationer</li>
+              <li>JavaScript (ES6+) og håndtering af JSON-data</li>
+              <li>
+                Erfaring med Astro til at bygge statiske og komponentbaserede
+                sites
+              </li>
+            </ul>
+            <h2>CV</h2>
+            <ul>
+              <li>
+                Praktik som grafisk design medhjælper hos
+                <a href="https://www.pif-app.com/" target="_blank"
+                  >PIF-app (Pay it Forward)</a
+                >, 2023-24.
+              </li>
+            </ul>
+
+            <p class="writingCursor"></p>
           </div>
         </div>
       </div>
