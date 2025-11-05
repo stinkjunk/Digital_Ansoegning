@@ -140,7 +140,6 @@ html.dark #inverter {
   @media (max-width: 1000px) {
     gap: 0ch;
     transform: translateX(20%);
-    
   }
 }
 
@@ -338,10 +337,14 @@ footer {
     mask-repeat: no-repeat;
     &.gitHub {
       mask-image: url(githublogo.svg);
-
     }
   }
-  
+}
+
+@media (max-width: 510px) {
+  footer {
+    height: 10vw !important;
+  }
 }
 
 @media (max-width: 800px) {
@@ -372,10 +375,11 @@ footer {
     width: 90%;
     padding: 2ch;
   }
-  footer{
-    margin-top: 3vh;
+  footer {
+    margin-top: 2vh;
+    margin-bottom: 0;
     padding-top: 0;
-    height: 6vh;
+    height: 5vw;
   }
   .page h2 {
     font-size: 4cqw;
@@ -413,12 +417,10 @@ footer {
   .page p {
     font-size: 1cqw;
   }
-
 }
 
 @media (max-width: 1400px) {
   .imagespacer img {
     --image-size: 25cqw;
-
   }
 }
