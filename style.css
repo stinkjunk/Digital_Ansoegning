@@ -177,6 +177,8 @@ header li {
 }
 
 .page {
+  margin-top: 2%;
+  margin-bottom: 2%;
   background-color: white;
   /* border: 1px solid black; */
   width: 70%;
