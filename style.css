@@ -136,6 +136,12 @@ html.dark #inverter {
   display: flex;
   gap: 1ch;
   margin-left: auto;
+  z-index: 1;
+  @media (max-width: 1000px) {
+    gap: 0ch;
+    transform: translateX(20%);
+    
+  }
 }
 
 .invSwitch p {
@@ -360,6 +366,11 @@ span.writingCursor {
   .extraMargin {
     margin-top: 0;
     margin: 2ch;
+  }
+
+  #toggleInv {
+    transform: translateX(0%);
+    gap: 1ch;
   }
 }
 @media (min-width: 1400px) {
