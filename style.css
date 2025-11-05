@@ -325,6 +325,7 @@ span.writingCursor {
     position: static;
     margin-left: 0;
     height: auto;
+    display: block;
   }
 
   #pageTitle.invis {
