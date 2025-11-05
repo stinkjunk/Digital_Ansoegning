@@ -9,6 +9,19 @@ const writingCursors = document.querySelectorAll(".writingCursor");
 const images = document.querySelectorAll("img");
 const scrollDown = document.querySelector("#scrollDown");
 const pageTitle = document.querySelector("#pageTitle");
+const subSupTemplate = `
+  Jeg brænder for at bygge
+  <span class="highlight">
+    fede brugeroplevelser med moderne webteknologier</span>
+  - og jeg har en særlig forkærlighed for clean design, responsivt layout
+  og godt kodehåndværk.
+`.trim();
+const subSup = document.querySelectorAll("p.sub800, p.sup800");
+subSup.forEach((p) => {
+  p.innerHTML = subSupTemplate;
+});
+
+
 
 window.addEventListener("resize", () => {
   updateSpacing();
@@ -48,6 +61,8 @@ function cursorBlink(cursor, symbol = "_") {
   cursor.innerHTML = symbol;
   setTimeout(() => cursorBlink(cursor, symbol), 500);
 }
+
+
 
 updateSpacing();
 
