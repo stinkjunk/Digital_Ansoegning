@@ -24,7 +24,7 @@
       <header>
         <h1 id="pageTitle">
           Magnus Krahl Larsen<span class="writingCursor sub800"></span
-          ><a href="#pageAbout" class="noStyling sup800" id="scrollDown"></a>
+          ><a href="#goTo" class="noStyling sup800" id="scrollDown"></a>
         </h1>
         <div id="toggleInv">
           <p>Mørk:</p>
@@ -36,6 +36,7 @@
     </div>
     <div id="headerspacer"></div>
     <main>
+      <div id="goTo"></div>
       <div id="pages">
         <div id="pageAbout" class="page">
           <div class="imagespacer">
@@ -121,14 +122,76 @@
                 ><span class="writingCursor"></span>
               </li>
             </ul>
-            
+            <button id="goToPage2" class="pageBrowse">
+              &gt; Se eksempler på mit arbejde</a
+            ></button>
+
             <!-- <p class="writingCursor"></p> -->
           </div>
+        </div>
+        <div id="pagePortfolio" class="page">
+          <div>
+            <h2>Portfolio:</h2>
+            <p>
+              Her er en liste er nogle af mine opgaver som jeg har deployet:
+            </p>
+          </div>
+          <div class="extramargin">
+            <ul>
+              <li>
+                <a href="https://stjutodoflat.netlify.app/" target="_blank">
+                  ToDo App (Vanilla JS/HTML/CSS)</a
+                ><br /><br />
+                Hvad end indskrives I denne app bliver gemt I din browser via
+                LocalStorage.
+              </li>
+              <li>
+                <a href="https://askexperts-opgave.netlify.app/" target="_blank"
+                  >Ask Experts (Astro)</a
+                >
+              </li>
+              <li>
+                <a href="https://family-friends-ten.vercel.app/" target="_blank"
+                  >Family Friends/DummyJson Browser (Next.js inkl. Tailwind)</a
+                ><br /><br />Denne opgave krævede originalt at vi skulle hente
+                data fra det amerikanske firma Purina, men da de havde lukket
+                deres API under opgaven var vi nødt til at bruge
+                <a target="_blank" href="https://dummyjson.com/">DummyJson</a>.
+                Før det var besluttet at vi skulle skifte over til DummyJson,
+                havde jeg lavet en fake kæledyrsdatabase i en JSON fil liggende
+                i projektet som hentede billeder fra en service som hedder
+                <a href="https://placecats.com/" target="_blank">Place Cats</a>,
+                hvilket stadigt kan tilgås med at trykke på informations-ikonet
+                i headeren.
+              </li>
+              <li>
+                <a
+                  href="https://simpelshop.vercel.app/
+"
+                  target="_blank"
+                  >Simple Webshop (Next.js inkl. Tailwind, gruppearbejde)</a
+                >
+                <br /><br />
+                En funktionel dummy webshop (Bruger igen DummyJson) som husker
+                på hvad der er lagt i kurven igennem
+                <a
+                  href="https://zustand.docs.pmnd.rs/getting-started/introduction"
+                  target="_blank"
+                  >Zustand</a
+                >.
+              </li>
+            </ul>
+          </div>
+          <button id="goToPage1" class="pageBrowse">&lt; Gå til forsiden</button>
         </div>
       </div>
     </main>
     <footer>
-      <a href="https://github.com/stinkjunk" target="_blank" class="iconLink gitHub"></a>
+      <a
+        href="https://github.com/stinkjunk"
+        target="_blank"
+        class="iconLink gitHub"
+      ></a>
     </footer>
     <script src="script.js"></script>
   </body>

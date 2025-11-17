@@ -1,5 +1,7 @@
 "use strict";
 
+const goToPage2 = document.querySelector("#goToPage2");
+const inverter = document.querySelector("#goToPage1");
 const header = document.querySelector("header");
 const headerspacer = document.querySelector("#headerspacer");
 const main = document.querySelector("main");
@@ -9,6 +11,7 @@ const writingCursors = document.querySelectorAll(".writingCursor");
 const images = document.querySelectorAll("img");
 const scrollDown = document.querySelector("#scrollDown");
 const pageTitle = document.querySelector("#pageTitle");
+const pages = document.querySelector("#pages");
 const subSupTemplate = `
   Jeg brænder for at bygge
   <span class="highlight">
@@ -21,7 +24,12 @@ subSup.forEach((p) => {
   p.innerHTML = subSupTemplate;
 });
 
-
+goToPage2.addEventListener("click", () => {
+  goToPage(2);
+});
+goToPage1.addEventListener("click", () => {
+  goToPage(1);
+});
 
 window.addEventListener("resize", () => {
   updateSpacing();
@@ -62,8 +70,6 @@ function cursorBlink(cursor, symbol = "_") {
   setTimeout(() => cursorBlink(cursor, symbol), 500);
 }
 
-
-
 updateSpacing();
 
 window.addEventListener("scroll", scrollUpdater);
@@ -79,3 +85,21 @@ function scrollUpdater() {
     pageTitle.classList.remove("invis");
   }
 }
+
+function goToPage(page) {
+  //Primitv, har kun 2 pages og tænker ikke på at lave flere, så er hardkoded for to pages
+  console.log("page: ", page);
+  if (page === 1) {
+    //pages scrolles til højre:
+    pages.style.transform = "translateX(50%)";
+  }
+  if (page === 2) {
+    //pages scrolles til venstre:
+    pages.style.transform = "translateX(-50%)";
+    pages.classList = "transitionTiming";
+  }
+}
+
+window.addEventListener("load", () => {
+  goToPage(1);
+});

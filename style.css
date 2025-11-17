@@ -10,6 +10,7 @@ html {
   background-color: white;
   color: black;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 html,
@@ -18,7 +19,14 @@ body {
   margin: 0;
   padding: 0;
 }
-
+main {
+  width: 100vw;
+  overflow-x: hidden;
+}
+body {
+  width: 100vw;
+  overflow-y: hidden;
+}
 .fixedCont {
   position: fixed;
 }
@@ -136,7 +144,7 @@ html.dark #inverter {
   display: flex;
   gap: 1ch;
   margin-left: auto;
-  z-index: 1;
+  z-index: 100;
   @media (max-width: 1000px) {
     gap: 0ch;
     transform: translateX(20%);
@@ -168,18 +176,47 @@ header li {
   user-select: none;
 }
 
+#goTo {
+  width: 0px;
+}
+
 #pages {
+  /* display: flex; */
+  overflow-x: visible;
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100vw;
+
+  /* flex-direction: column; */
+  justify-content: center;
+  /* align-items: center; */
+
+  pointer-events: none;
+  .page {
+    pointer-events: auto;
+  }
+}
+
+.transitionTiming {
+  transition: all var(--transitionTiming);
+}
+
+#pagePortfolio {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  .pageBrowse {
+    text-align: left;
+  }
 }
 
 .page {
+  margin: auto;
   margin-top: 2%;
   margin-bottom: 2%;
   background-color: white;
   /* border: 1px solid black; */
+  min-height: 20px; /*Så en ny side kan ses*/
   width: 70%;
   /* aspect-ratio: 1 / 1.414; */
   box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.185);
@@ -191,6 +228,18 @@ header li {
 .extraMargin {
   margin-top: 0;
   margin: 5ch;
+}
+
+#pagePortfolio {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  .extramargin ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50vh;
+  }
 }
 
 .imagespacer :first-child,
@@ -266,6 +315,7 @@ html.dark img.processed {
   border-color: black;
 }
 
+button,
 a:link,
 a:visited {
   color: #1500ff;
@@ -283,10 +333,35 @@ a.noStyling:link,
 .page h2 {
   font-size: 2cqw;
 }
-.page li,
-.page p {
-  font-size: 1.5cqw;
+.page {
+  p,
+  li,
+  button {
+    font-family: "Courier New", Courier, monospace;
+  }
 }
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  &.pageBrowse {
+    margin-top: 5%;
+    margin-bottom: 2%;
+  }
+}
+
+/* a.pageBrowse {
+  font-size: 1cqw;
+  margin-left: auto;
+  display: block;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  width: 100%;
+  text-align: right;
+  margin-left: auto;
+
+} */
 
 .highlight {
   /* background-color: rgba(255, 255, 0, 0.699); */
@@ -385,7 +460,8 @@ footer {
     font-size: 4cqw;
   }
   .page li,
-  .page p {
+  .page p,
+  .page button {
     font-size: 3cqw;
   }
 
@@ -414,7 +490,8 @@ footer {
     font-size: 1.5cqw;
   }
   .page li,
-  .page p {
+  .page p,
+  .page button {
     font-size: 1cqw;
   }
 }
