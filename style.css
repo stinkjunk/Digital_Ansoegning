@@ -10,7 +10,6 @@ html {
   background-color: white;
   color: black;
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 html,
@@ -19,14 +18,7 @@ body {
   margin: 0;
   padding: 0;
 }
-main {
-  width: 100vw;
-  overflow-x: hidden;
-}
-body {
-  width: 100vw;
-  overflow-y: hidden;
-}
+
 .fixedCont {
   position: fixed;
 }
@@ -55,10 +47,11 @@ header > * {
   text-transform: uppercase;
 }
 
-#pageTitle {
+header h1 {
   font-size: 15cqw;
   /* font-weight: 100; */
-
+}
+#pageTitle {
   transition: opacity var(--transitionTiming);
   line-height: 1;
 
@@ -76,7 +69,6 @@ header > * {
   bottom: 0;
   display: flex;
   align-items: center;
-  transform: translateY(0.1ch);
   #scrollDown {
     position: absolute;
     left: 6ch;
@@ -144,7 +136,7 @@ html.dark #inverter {
   display: flex;
   gap: 1ch;
   margin-left: auto;
-  z-index: 100;
+  z-index: 1;
   @media (max-width: 1000px) {
     gap: 0ch;
     transform: translateX(20%);
@@ -176,30 +168,41 @@ header li {
   user-select: none;
 }
 
-#goTo {
-  width: 0px;
-}
-
 #pages {
-  /* display: flex; */
-  overflow-x: visible;
-
   display: grid;
+  /* flex-direction: column;
+  justify-content: center;
+  align-items: center; */
   grid-auto-flow: column;
   grid-auto-columns: 100vw;
-
-  /* flex-direction: column; */
-  justify-content: center;
-  /* align-items: center; */
-
-  pointer-events: none;
-  .page {
-    pointer-events: auto;
-  }
+  overflow-x: hidden;
 }
 
-.transitionTiming {
-  transition: all var(--transitionTiming);
+.page {
+  /* width: 70vw; */
+  margin-top: 2%;
+  margin-bottom: 2%;
+  /* margin-left: 15%;
+  margin-right: 15%; */
+  background-color: white;
+  /* border: 1px solid black; */
+  /* aspect-ratio: 1 / 1.414; */
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.185);
+  box-sizing: border-box;
+  padding: 5ch;
+  position: relative;
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+
+  /*Use variables to more easily change page width:*/
+  --pageWidth: 70vw;
+  width: var(--pageWidth);
+  margin-left: calc((100vw - var(--pageWidth)) / 2);
+  margin-right: calc((100vw - var(--pageWidth)) / 2);
+  transition: margin-left var(--transitionTiming);
+  &.pushRight {
+    margin-left: calc(((100vw - var(--pageWidth)) / 2) + 100vw);
+  }
 }
 
 #pagePortfolio {
@@ -209,27 +212,6 @@ header li {
     text-align: left;
   }
 }
-
-.page {
-  margin: auto;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  background-color: white;
-  /* border: 1px solid black; */
-  min-height: 20px; /*Så en ny side kan ses*/
-  width: 70%;
-  /* aspect-ratio: 1 / 1.414; */
-  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.185);
-  box-sizing: border-box;
-  padding: 5ch;
-  position: relative;
-}
-
-.extraMargin {
-  margin-top: 0;
-  margin: 5ch;
-}
-
 #pagePortfolio {
   display: flex;
   justify-content: space-between;
@@ -240,6 +222,11 @@ header li {
     justify-content: space-between;
     height: 50vh;
   }
+}
+
+.extraMargin {
+  margin-top: 0;
+  margin: 5ch;
 }
 
 .imagespacer :first-child,
@@ -340,28 +327,29 @@ a.noStyling:link,
     font-family: "Courier New", Courier, monospace;
   }
 }
-
 button {
   cursor: pointer;
   background: none;
   border: none;
-  &.pageBrowse {
-    margin-top: 5%;
-    margin-bottom: 2%;
-  }
 }
 
-/* a.pageBrowse {
-  font-size: 1cqw;
+#pagePortfolio button.pageBrowse {
+  margin-right: auto;
+  margin-top: 10%;
+  margin-bottom: 4%;
+}
+#pageAbout button {
   margin-left: auto;
-  display: block;
-  margin-top: 5%;
-  margin-bottom: 2%;
-  width: 100%;
-  text-align: right;
-  margin-left: auto;
+}
 
-} */
+.flexContent {
+  display: flex;
+  &:has(button) {
+    margin-top: 10%;
+    margin-bottom: 4%;
+    width: 100%;
+  }
+}
 
 .highlight {
   /* background-color: rgba(255, 255, 0, 0.699); */
@@ -447,9 +435,18 @@ footer {
   }
   footer,
   .page {
-    width: 90%;
+    /* width: 90%; */
     padding: 2ch;
   }
+
+  footer {
+    width: 90%;
+  }
+
+  .page {
+    --pageWidth: 90vw;
+  }
+
   footer {
     margin-top: 2vh;
     margin-bottom: 0;
@@ -462,7 +459,7 @@ footer {
   .page li,
   .page p,
   .page button {
-    font-size: 3cqw;
+    font-size: 3cqw !important;
   }
 
   .sub800 {
